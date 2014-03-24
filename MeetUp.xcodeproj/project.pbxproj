@@ -21,6 +21,9 @@
 		5666B63118E0ADCE0018DDEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666B61318E0ADCE0018DDEA /* UIKit.framework */; };
 		5666B63918E0ADCE0018DDEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5666B63718E0ADCE0018DDEA /* InfoPlist.strings */; };
 		5666B63B18E0ADCE0018DDEA /* MeetUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666B63A18E0ADCE0018DDEA /* MeetUpTests.m */; };
+		5666B64A18E0BEB60018DDEA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666B64918E0BEB60018DDEA /* Parse.framework */; };
+		5666B64D18E0D1650018DDEA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666B64C18E0D1650018DDEA /* DetailViewController.m */; };
+		5666B65018E0D99B0018DDEA /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666B64F18E0D99B0018DDEA /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		5666B63618E0ADCE0018DDEA /* MeetUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MeetUpTests-Info.plist"; sourceTree = "<group>"; };
 		5666B63818E0ADCE0018DDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5666B63A18E0ADCE0018DDEA /* MeetUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetUpTests.m; sourceTree = "<group>"; };
+		5666B64918E0BEB60018DDEA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		5666B64B18E0D1650018DDEA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		5666B64C18E0D1650018DDEA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
+		5666B64E18E0D99B0018DDEA /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		5666B64F18E0D99B0018DDEA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			files = (
 				5666B61218E0ADCE0018DDEA /* CoreGraphics.framework in Frameworks */,
 				5666B61418E0ADCE0018DDEA /* UIKit.framework in Frameworks */,
+				5666B64A18E0BEB60018DDEA /* Parse.framework in Frameworks */,
 				5666B61018E0ADCE0018DDEA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +110,7 @@
 		5666B60E18E0ADCE0018DDEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5666B64918E0BEB60018DDEA /* Parse.framework */,
 				5666B60F18E0ADCE0018DDEA /* Foundation.framework */,
 				5666B61118E0ADCE0018DDEA /* CoreGraphics.framework */,
 				5666B61318E0ADCE0018DDEA /* UIKit.framework */,
@@ -112,9 +122,13 @@
 		5666B61518E0ADCE0018DDEA /* MeetUp */ = {
 			isa = PBXGroup;
 			children = (
+				5666B62118E0ADCE0018DDEA /* Main.storyboard */,
+				5666B64E18E0D99B0018DDEA /* Event.h */,
+				5666B64F18E0D99B0018DDEA /* Event.m */,
+				5666B64B18E0D1650018DDEA /* DetailViewController.h */,
+				5666B64C18E0D1650018DDEA /* DetailViewController.m */,
 				5666B61E18E0ADCE0018DDEA /* AppDelegate.h */,
 				5666B61F18E0ADCE0018DDEA /* AppDelegate.m */,
-				5666B62118E0ADCE0018DDEA /* Main.storyboard */,
 				5666B62418E0ADCE0018DDEA /* ViewController.h */,
 				5666B62518E0ADCE0018DDEA /* ViewController.m */,
 				5666B62718E0ADCE0018DDEA /* Images.xcassets */,
@@ -251,7 +265,9 @@
 			files = (
 				5666B62618E0ADCE0018DDEA /* ViewController.m in Sources */,
 				5666B62018E0ADCE0018DDEA /* AppDelegate.m in Sources */,
+				5666B65018E0D99B0018DDEA /* Event.m in Sources */,
 				5666B61C18E0ADCE0018DDEA /* main.m in Sources */,
+				5666B64D18E0D1650018DDEA /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +392,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MeetUp/MeetUp-Prefix.pch";
 				INFOPLIST_FILE = "MeetUp/MeetUp-Info.plist";
@@ -389,6 +409,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MeetUp/MeetUp-Prefix.pch";
 				INFOPLIST_FILE = "MeetUp/MeetUp-Info.plist";
