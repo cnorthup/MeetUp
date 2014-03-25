@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Event.h"
+//#import "Event.h"
 @interface DetailViewController : UIViewController
-@property Event *event;
+//@property Event *event;
+@property NSString* description;
+@property NSString* rsvp;
+@property NSString* hostInfo;
+@property NSString* link;
 @end

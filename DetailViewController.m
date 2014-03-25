@@ -7,14 +7,17 @@
 //
 
 #import "DetailViewController.h"
-
+#import "WebViewController.h"
 
 
 @interface DetailViewController ()
 {
-    IBOutlet UILabel *descriptionLabel;
     IBOutlet UILabel *rsvpLabel;
     IBOutlet UILabel *hostInfoLabel;
+    IBOutlet UIWebView *descriptionView;
+    NSURLRequest* request;
+    NSURL* url;
+    
 }
 @end
 
@@ -25,10 +28,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    descriptionLabel.text = self.event.description;
-    rsvpLabel.text = self.event.rsvp;
-    hostInfoLabel.text = self.event.hostInfo;
+    [descriptionView loadHTMLString:self.description baseURL:nil];
+    rsvpLabel.text = self.rsvp;
+    hostInfoLabel.text = self.hostInfo;
+    url = [NSURL URLWithString:self.link];
+    request = [NSURLRequest requestWithURL:url];
+//    descriptionLabel.text = self.event.description;
+//    rsvpLabel.text = self.event.rsvp;
+//    hostInfoLabel.text = self.event.hostInfo;
     
+}
+
+//- (IBAction)onLinkButtonPressed:(id)sender {
+//    WebViewController *vc;
+//}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    WebViewController *vc = segue.destinationViewController;
+    vc.request = request;
 }
 
 

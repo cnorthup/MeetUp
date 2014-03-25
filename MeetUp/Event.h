@@ -9,7 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Event : NSObject
-@property NSString* description;
-@property NSString* rsvp;
-@property NSString* hostInfo;
+
 @end
